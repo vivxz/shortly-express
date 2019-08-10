@@ -91,7 +91,7 @@ app.post('/signup', (req, res, next) => {
     .then((result) => {
       if (!result) {
         models.Users.create({ username, password })
-          .then(() => res.status(201).redirect('/').send('Created user profile!'))
+          .then(() => res.status(201).redirect('/'))
           .catch(err => res.status(401).send(err))
       } else {
         res.redirect('/signup');
